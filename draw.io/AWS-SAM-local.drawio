@@ -1,0 +1,103 @@
+<mxfile host="Electron" modified="2021-06-18T15:01:01.559Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/14.6.13 Chrome/89.0.4389.128 Electron/12.0.7 Safari/537.36" etag="iMVLWZnTtAFU4zpLvMlR" version="14.6.13" type="device">
+  <diagram id="6ysDcpq6YBsnCspcGD-K" name="SAM demo">
+    <mxGraphModel dx="1106" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-0" />
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-1" parent="JroOfa3HzMi3UmqoVyq5-0" />
+        <mxCell id="ZeA_iLn9OlwCFb1lVa49-1" value="see steps&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; to" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="JroOfa3HzMi3UmqoVyq5-1">
+          <mxGeometry x="40" y="336" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-63" value="SAM output: &quot;Mounting .../aws_sam_ocr as /var/task:ro,delegated inside runtime container&quot;" style="text;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=bottom;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="404" y="500" width="436" height="236" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-47" value="S3 bucket&lt;br&gt;fsp-sam" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#277116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket_with_objects;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="486" y="372" width="75" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-48" value="aws-sam-ocr-&lt;br&gt;ResultsTable" style="outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="976" y="512" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-49" value="event created by SAM&lt;br&gt;simulating an S3 notification&lt;br&gt;and setting env var TABLE_NAME" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#DAE8FC;" parent="JroOfa3HzMi3UmqoVyq5-1" source="JroOfa3HzMi3UmqoVyq5-50" target="JroOfa3HzMi3UmqoVyq5-54" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="486" y="632.695652173913" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-50" value="SAM CLI" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.laptop;pointerEvents=1;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="206" y="498" width="106" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-51" value="fetch PNG&lt;br&gt;mentioned&lt;br&gt;in event" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="JroOfa3HzMi3UmqoVyq5-1" source="JroOfa3HzMi3UmqoVyq5-54" target="JroOfa3HzMi3UmqoVyq5-47" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="763" y="432" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-52" value="invoke&lt;br&gt;detect_labels(PNG in bucket)" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="JroOfa3HzMi3UmqoVyq5-1" source="JroOfa3HzMi3UmqoVyq5-54" target="JroOfa3HzMi3UmqoVyq5-56" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="763" y="432" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-53" value="write label&lt;br&gt;detection&lt;br&gt;results" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="JroOfa3HzMi3UmqoVyq5-1" source="JroOfa3HzMi3UmqoVyq5-54" target="JroOfa3HzMi3UmqoVyq5-48" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="882" y="551" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-54" value="aws-sam-ocr-&lt;br&gt;DetectTextInImage" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D05C17;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="724" y="512" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-55" value="PNG file" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D05C17;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.container_registry_image;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="502.5" y="301" width="42" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-56" value="Rekognition" style="outlineConnect=0;fontColor=#232F3E;gradientColor=#4AB29A;gradientDirection=north;fillColor=#116D5B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rekognition_2;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="726" y="276" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-57" value="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="430" y="506" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-58" value="2" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="416" y="590" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-59" value="3" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="609" y="432" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-60" value="4" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="794" y="386" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-61" value="mount local code&lt;br&gt;to remote /var/task" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=#DAE8FC;" parent="JroOfa3HzMi3UmqoVyq5-1" source="JroOfa3HzMi3UmqoVyq5-62" target="JroOfa3HzMi3UmqoVyq5-54" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362.75" y="621" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-62" value="src/app.py&lt;br&gt;local Lambda code" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.code_file;pointerEvents=1;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="235.25" y="638" width="47.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-64" value="5" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="864" y="503" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-65" value="invocation:&lt;br&gt;TABLE_NAME=aws-sam-ocr-ResultsTable-1XPTGE2822HQS sam local invoke --event fspEvent.json" style="text;whiteSpace=wrap;html=1;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="80" y="450" width="264.75" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-66" value="&lt;h1&gt;&lt;u&gt;Server Application Model (SAM): run a local Lambda application example&lt;/u&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="38" y="38" width="1120" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="steps: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-example-s3.html" link="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-example-s3.html" id="JroOfa3HzMi3UmqoVyq5-67">
+          <mxCell style="text;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+            <mxGeometry x="38" y="94" width="762" height="26" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-68" value="only a few commands are needed:&lt;br&gt;&lt;br&gt;* create an S3 bucket, in the below example, its name is &quot;fsp-same&quot;&lt;br&gt;$ sam init \\n--location https://github.com/aws-samples/cookiecutter-aws-sam-s3-rekognition-dynamodb-python \\n--no-input &lt;br&gt;$&amp;nbsp;sam package \\n    --template-file template.yaml \\n    --output-template-file packaged.yaml \\n    --s3-bucket fsp-sam &lt;br&gt;$&amp;nbsp;sam deploy \\n    --template-file packaged.yaml \\n    --stack-name aws-sam-ocr \\n    --capabilities CAPABILITY_IAM \\n    --region us-east-1 &lt;br&gt;$&amp;nbsp;TABLE_NAME=aws-sam-ocr-ResultsTable-1XPTGE2822HQS sam local invoke --event fspEvent.json" style="text;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="38" y="137" width="762" height="111" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-69" value="&lt;h2 style=&quot;font-size: 21px&quot;&gt;&lt;span style=&quot;font-size: 21px&quot;&gt;&lt;font face=&quot;Helvetica&quot;&gt;&quot;sam local&quot; step flow:&lt;/font&gt;&lt;/span&gt;&lt;/h2&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontStyle=0;fontSize=21;fontFamily=Verdana;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="38" y="287" width="242" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="JroOfa3HzMi3UmqoVyq5-70" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Docker.svg;" parent="JroOfa3HzMi3UmqoVyq5-1" vertex="1">
+          <mxGeometry x="635.61" y="627" width="74.39" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeA_iLn9OlwCFb1lVa49-0" value="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="JroOfa3HzMi3UmqoVyq5-1">
+          <mxGeometry x="100" y="332" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ZeA_iLn9OlwCFb1lVa49-2" value="5" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="JroOfa3HzMi3UmqoVyq5-1">
+          <mxGeometry x="160" y="332" width="28" height="28" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
