@@ -11,6 +11,6 @@ The descriptions found here are focussing on the 2nd topic: how to use "sam loca
 
 # Architecture overview
 
-![Architecture Image](./img/SAM-local-example.png)
-
 Please find the respective draw.io file in the draw.io/ folder!
+
+![Architecture Image](./img/SAM-local-example.png)
